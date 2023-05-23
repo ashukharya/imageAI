@@ -36,7 +36,7 @@ app.post('/images', async (req, res) => {
         res.send(response.data.data)
     }
     catch(error){
-        console.error(error)
+        console.log("Too many requests...")
         res.send("err")
     }
 })
@@ -61,7 +61,8 @@ app.post('/variations', async(req,res)=>{
           )
           res.send(response.data.data)
     }catch(error){
-        console.error(error)
+        console.log("Too many requests...")
+        res.send("err")
     }
 })
 

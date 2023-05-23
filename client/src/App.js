@@ -34,7 +34,8 @@ const App=()=>{
           "Content-Type":"application/json"
         }
       }
-      const response=await fetch('http://localhost:8000/images',options)
+      //http://localhost:8000
+      const response=await fetch('https://img-gen-squl.onrender.com/images',options)
       const data=await response.json()
       console.log(data)
       setImages(data)
@@ -42,7 +43,7 @@ const App=()=>{
     }
     catch(error){
       console.error(error)
-      alert("Too Many Requests, wait for a while to regenete the images or refresh the page. Thank you!")
+      alert("Too Many Requests, wait for a while to regenerate the images or refresh the page. Thank you!")
     }
   }
 // console.log(value)
@@ -60,7 +61,7 @@ const App=()=>{
         body:formData
       }
 
-      const response=await fetch('http://localhost:8000/upload',options)
+      const response=await fetch('https://img-gen-squl.onrender.com/upload',options)
       const data=await response.json()
       console.log(data)
     }
@@ -81,7 +82,7 @@ const App=()=>{
         method:"POST"
       }
 
-      const response=await fetch('http://localhost:8000/variations',options)
+      const response=await fetch('https://img-gen-squl.onrender.com/variations',options)
       const data=await response.json()
       // console.log(data)
       setImages(data)
@@ -89,6 +90,7 @@ const App=()=>{
       setModalOpen(false)
     }catch(error){
       console.error(error)
+      alert("Too Many Requests, wait for a while to regenerate the images or refresh the page. Thank you!")
     }
   }
 
